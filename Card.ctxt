@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Card
+comment0.text=\r\n\ This\ class\ is\ a\ part\ of\ SE\ Introduction\ class\ work.\r\n\r\n\ @author\ Gabriel\ Rabelo\r\n\ @version\ 09/jun/2019\r\n
+comment1.params=value
+comment1.target=Card(int)
+comment1.text=\r\n\ Create\ a\ new\ Card\r\n
+comment2.params=value
+comment2.target=void\ setValue(int)
+comment2.text=\r\n\ This\ method\ set\ the\ card\ value.\r\n
+comment3.params=
+comment3.target=int\ getValue()
+comment3.text=\r\n\ This\ method\ restatus\ the\ Card\ value.\r\n
+comment4.params=
+comment4.target=void\ hideCard()
+comment4.text=\r\n\ This\ method\ change\ the\ Card\ status,\ showing\ it's\ value.\r\n
+comment5.params=
+comment5.target=void\ showCard()
+comment5.text=\r\n\ This\ method\ change\ the\ Card\ status,\ hiding\ it's\ value.\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ This\ method\ restatus\ the\ value\ or\ card\ status\ if\ hidden.\r\n
+numComments=7

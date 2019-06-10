@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Deck
+comment0.text=\r\n\ This\ class\ is\ a\ part\ of\ SE\ Introduction\ class\ work.\r\n\r\n\ @author\ Gabriel\ Rabelo\r\n\ @version\ 9/jul/2019\r\n
+comment1.params=difficulty
+comment1.target=Deck(int)
+comment2.params=
+comment2.target=void\ fill()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4
