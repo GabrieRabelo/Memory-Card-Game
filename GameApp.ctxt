@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=GameApp
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=load
+comment2.target=void\ startGame(boolean)
+comment3.params=
+comment3.target=void\ startScreen()
+comment4.params=
+comment4.target=void\ waitTurn()
+numComments=5

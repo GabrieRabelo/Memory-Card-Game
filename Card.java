@@ -14,7 +14,7 @@ public class Card{
      */
     public Card(int value){
         this.value = value;
-        status = true;
+        status = false;
     }
     
     /**
@@ -32,12 +32,12 @@ public class Card{
     /**
      * This method change the Card status, showing it's value.
      */
-    public void hideCard() { status = true; }
+    public void hideCard() { status = false; }
     
     /**
      * This method change the Card status, hiding it's value.
      */
-    public void showCard() { status = false; }
+    public void showCard() { status = true; }
     
     /**
      * This method restatus the value or card status if hidden.
@@ -55,7 +55,7 @@ public class Card{
             case 6: output = "|=S|"; break;
             case 7: output = "|=D|"; break;
             case 8: output = "|=O|"; break;
-            case 9: output = "|=3|"; break;
+            case 9: output = "|=C|"; break;
             case 10: output = "|=I|"; break;
             case 11: output = "|=B|"; break;
             case 12: output = "|=P|"; break;

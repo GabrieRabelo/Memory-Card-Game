@@ -6,28 +6,37 @@
  */
 
 public class Deck{
-    private Card []deck;
+    private Card[] deck;
     private int pos;
     
-    public Deck(int difficulty){
-        int cardAmount=5;
-        //if(difficulty==1) cardAmount = 5;
-        //else if(difficulty==2) cardAmount = 8;
-        //else if(difficulty==3) cardAmount = 15;
-        deck = new Card[cardAmount-1];
+    /**
+     * This method instances a new deck of cards with a standard cardAmount.
+     */
+    public Deck(){
+        int cardAmount=10;
+        deck = new Card[cardAmount];
         pos = 0;
     }
     
+    /**
+     * This method fill all cards in the deck array, 
+     */
     public void fill(){
         for(int i=0;i<deck.length;i++){
             deck[i] = new Card(i);
         }
     }
     
+    private void showAll(){
+        for(int i=0;i<deck.length;i++){
+            deck[i].showCard();
+        }
+    }
+        
     public String toString(){
         String msg = "";
         for(int i=0; i<this.deck.length; i++){
-            msg += deck[i] + " - ";
+            msg += deck[i] + "  ";
         }
         return msg;
     }
