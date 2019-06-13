@@ -37,10 +37,29 @@ public class GameApp{
     }
     
     public static void startGame(boolean load){
-        if(load == true){
+        Scanner in = new Scanner(System.in);
+        Deck deck1 = new Deck();
+        if(load == false){ ; }
+        else if(load == true){
             //ler arquivos de carregamento
         }
-        
+        while(true){
+            System.out.println(deck1);
+            int c, l;
+            do{
+                System.out.println("\n Type a column number to turn");
+                c = in.nextInt();
+            }while(c<1 || c>5);
+             do{
+                System.out.println("\n Type a line number to turn");
+                l= in.nextInt();
+            }while(l<1 || l>5);
+            
+            deck1.showCard(c-1,l-1);
+            
+            
+            
+        }
         
         
     }

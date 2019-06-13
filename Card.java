@@ -45,7 +45,8 @@ public class Card{
     public String toString(){
         if (status==false) return "|**|";
         String output;
-        switch(value){ 
+        switch(value){
+            case -1: output = "    "; break;
             case 0: output = "|=)|"; break;
             case 1: output = "|=(|"; break;
             case 2: output = "|=]|"; break;
