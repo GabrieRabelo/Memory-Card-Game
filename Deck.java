@@ -4,7 +4,7 @@
  * @author Gabriel Rabelo
  * @version 9/jul/2019
  */
-
+import java.util.Random;
 public class Deck{
     private Card[][] deck;
     private int pos;
@@ -13,7 +13,7 @@ public class Deck{
      * This method instances a new deck of cards with a standard cardAmount.
      */
     public Deck(){
-        int cardAmount=5;
+        int cardAmount=4;
         deck = new Card[cardAmount][cardAmount];
         pos = 0;
         fill();
@@ -28,7 +28,16 @@ public class Deck{
             for(int i=0;i<deck.length;i++){
                 deck[i][j] = new Card(pos);
                 pos++;
-                if(pos>14){ pos = 0; }
+                if(pos==8){ pos = 0; }
+            }
+        }
+    }
+    
+    public void shuffle(){
+        Random rn = new Random();
+        for(int j=0;j<deck.length;j++){   
+            for(int i=0;i<deck.length;i++){
+                
             }
         }
     }
@@ -55,6 +64,6 @@ public class Deck{
             }
             msg += "\n\n";
         }
-        return "\f   1    2    3    4    5 \n" + msg;
+        return "\f   1    2    3    4 \n" + msg;
     }
 }

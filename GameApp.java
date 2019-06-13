@@ -39,6 +39,8 @@ public class GameApp{
     public static void startGame(boolean load){
         Scanner in = new Scanner(System.in);
         Deck deck1 = new Deck();
+        deck1.shuffle();
+        deck1.showAll();
         if(load == false){ ; }
         else if(load == true){
             //ler arquivos de carregamento
@@ -49,11 +51,11 @@ public class GameApp{
             do{
                 System.out.println("\n Type a column number to turn");
                 c = in.nextInt();
-            }while(c<1 || c>5);
+            }while(c<1 || c>4);
              do{
                 System.out.println("\n Type a line number to turn");
                 l= in.nextInt();
-            }while(l<1 || l>5);
+            }while(l<1 || l>4);
             
             deck1.showCard(c-1,l-1);
             
