@@ -39,8 +39,8 @@ public class GameApp{
     public static void startGame(boolean load){
         Scanner in = new Scanner(System.in);
         Deck deck1 = new Deck();
-        deck1.shuffle();
-        deck1.showAll();
+        //deck1.shuffle();
+        //deck1.showAll();
         if(load == false){ ; }
         else if(load == true){
             //ler arquivos de carregamento

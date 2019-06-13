@@ -37,6 +37,7 @@ public class Deck{
         Random rn = new Random();
         for(int j=0;j<deck.length;j++){   
             for(int i=0;i<deck.length;i++){
+                int r = rn.nextInt(4);
                 
             }
         }
