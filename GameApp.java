@@ -40,16 +40,16 @@ public class GameApp{
         Scanner in = new Scanner(System.in);
         Deck deck1 = new Deck();
         boolean bScore=false;
-        int score=0, scoreBot=0;
+        int score=0;
         if(load == false){ ; }
         else if(load == true){
             //ler arquivos de carregamento
         }
         
-        for(int i=1;i<30;i++){
+        for(int i=1;i<=20;i++){
             
             System.out.println(deck1);
-            System.out.println("Pontuação: " + score + " | Rodada :" + i + "/30");
+            System.out.println("Rodada: " + i + "/20");
             
             int c1, l1, c2, l2;
             
@@ -64,7 +64,7 @@ public class GameApp{
             
             deck1.showCard(c1-1,l1-1);
             System.out.println(deck1);
-            System.out.println("Pontuação: " + score + " | Rodada :" + i + "/30");
+            System.out.println("Rodada: " + i + "/20");
             
             do{
                 System.out.println("\n Digite o número da coluna.");
@@ -77,12 +77,17 @@ public class GameApp{
             
             deck1.showCard(c2-1,l2-1);
             System.out.println(deck1);
-            System.out.println("Pontuação: " + score + " | Rodada: " + i + "/30");
+            System.out.println("Rodada: " + i + "/20");
             
             waitTurn();
             bScore = deck1.compareCards(c1-1, l1-1, c2-1, l2-1);
             if (bScore == true) { score += 100; }
             bScore = false;
+            
+            if(score == 800){
+                System.out.println("Parabéns, você ganhou o jogo");
+            }
+            
         }
         
     }
