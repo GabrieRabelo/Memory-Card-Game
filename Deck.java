@@ -33,6 +33,9 @@ public class Deck{
         }
     }
     
+    /**
+     * This method shuffle the matrix to get a new randomized matrix.
+     */
     public void shuffle(){
         Random rn = new Random();
         for(int j=0;j<deck.length;j++){   
@@ -43,11 +46,41 @@ public class Deck{
         }
     }
     
+    /**
+     * This method show the card to check the value toString and show to the user.
+     */    
     public void showCard(int a, int b){
         if(a>0||a<4 && b>0 || b<4) deck[a][b].showCard();
         return;
     }
     
+    /**
+     * This method compares 2 cards value and set it's value to -1 if equals.
+     */
+    public boolean compareCards(int a, int b, int c, int d){
+        if(deck[a][b].getValue()==deck[c][d].getValue()){
+            compareTrue(a,b,c,d);
+            return true;
+        }
+        else {
+            compareFalse(a,b,c,d);
+            return false;
+        }
+    }
+    
+    public void compareTrue(int a, int b, int c, int d){
+        deck[a][b].setValue(-1);
+        deck[c][d].setValue(-1);
+    }
+    
+    public void compareFalse(int a, int b, int c, int d){
+        deck[a][b].hideCard();
+        deck[c][d].hideCard();
+    }
+    
+    /**
+     * This method is used to test all cards value in the matrix;
+     */
     public void showAll(){
         for(int j=0;j<deck.length;j++){
             for(int i=0;i<deck.length;i++){
@@ -55,7 +88,10 @@ public class Deck{
             }
         }
     }
-        
+    
+    /**
+     * Print the whole deck positions.
+     */
     public String toString(){
         String msg = "";
         for(int j=0;j<deck.length;j++){

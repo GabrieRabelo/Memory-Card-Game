@@ -25,7 +25,7 @@ public class Card{
     }
     
     /**
-     * This method restatus the Card value.
+     * This method return the Card value.
      */
     public int getValue() { return value; }
     
@@ -40,13 +40,13 @@ public class Card{
     public void showCard() { status = true; }
     
     /**
-     * This method restatus the value or card status if hidden.
+     * This method return the value or card status if hidden.
      */
     public String toString(){
         if (status==false) return "|**|";
         String output;
         switch(value){
-            case -1: output = "    "; break;
+            case -1: output = "    "; break; //value when the card match with the equal card.
             case 0: output = "|=)|"; break;
             case 1: output = "|=(|"; break;
             case 2: output = "|=]|"; break;

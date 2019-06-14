@@ -1,4 +1,4 @@
-/**
+ /**
  * This class is the main class of the Game.
  *
  * @author Gabriel Rabelo
@@ -16,13 +16,13 @@ public class GameApp{
         int menuOption=0;
         boolean load = false;
         do{
-            System.out.println("\f|**||**| Memory Card Game |**||**|");
+            System.out.println("\f|**||**| Jogo da Memória  |**||**|");
             System.out.println("|**||**| |**||**||**||**| |**||**|");
-            System.out.println("\n        - Main Menu -\n");
-            System.out.println("1 - New Game");
-            System.out.println("2 - Load");
-            System.out.println("3 - How to play");
-            System.out.println("0 - Exit");
+            System.out.println("\n        - Menu -\n");
+            System.out.println("1 - Novo Jogo");
+            System.out.println("2 - Carregar");
+            System.out.println("3 - Como jogar");
+            System.out.println("0 - Sair");
             menuOption = in.nextInt();
             
             switch(menuOption){
@@ -39,53 +39,74 @@ public class GameApp{
     public static void startGame(boolean load){
         Scanner in = new Scanner(System.in);
         Deck deck1 = new Deck();
-        //deck1.shuffle();
-        //deck1.showAll();
+        boolean bScore=false;
+        int score=0, scoreBot=0;
         if(load == false){ ; }
         else if(load == true){
             //ler arquivos de carregamento
         }
-        while(true){
-            System.out.println(deck1);
-            int c, l;
-            do{
-                System.out.println("\n Type a column number to turn");
-                c = in.nextInt();
-            }while(c<1 || c>4);
-             do{
-                System.out.println("\n Type a line number to turn");
-                l= in.nextInt();
-            }while(l<1 || l>4);
-            
-            deck1.showCard(c-1,l-1);
-            
-            
-            
-        }
         
+        for(int i=1;i<30;i++){
+            
+            System.out.println(deck1);
+            System.out.println("Pontuação: " + score + " | Rodada :" + i + "/30");
+            
+            int c1, l1, c2, l2;
+            
+            do{
+                System.out.println("\n Digite o número da coluna.");
+                c1 = in.nextInt();
+            }while(c1<1 || c1>4);
+             do{
+                System.out.println("\n Digite o número da linha.");
+                l1 = in.nextInt();
+            }while(l1<1 || l1>4);
+            
+            deck1.showCard(c1-1,l1-1);
+            System.out.println(deck1);
+            System.out.println("Pontuação: " + score + " | Rodada :" + i + "/30");
+            
+            do{
+                System.out.println("\n Digite o número da coluna.");
+                c2 = in.nextInt();
+            }while(c2<1 || c2>4);
+            do{
+                System.out.println("\n Digite o número da linha.");
+                l2 = in.nextInt();
+            }while(l2<1 || l2>4);
+            
+            deck1.showCard(c2-1,l2-1);
+            System.out.println(deck1);
+            System.out.println("Pontuação: " + score + " | Rodada: " + i + "/30");
+            
+            waitTurn();
+            bScore = deck1.compareCards(c1-1, l1-1, c2-1, l2-1);
+            if (bScore == true) { score += 100; }
+            bScore = false;
+        }
         
     }
     
     public static void startScreen(){
         Scanner in = new Scanner(System.in);
-        System.out.println("\f|**||**| Memory Card Game |**||**|");
+        System.out.println("\f|**||**| Jogo da Memória  |**||**|");
         System.out.println("|**||**| |**||**||**||**| |**||**|");
-        System.out.println("\n\n     Type anything to Start.");
+        System.out.println("\n\nDigite qualquer coisa para iniciar.");
         String start = in.nextLine(); 
         waitTurn();
-        System.out.println("\f|XD||**| Memory Card Game |**||**|");
+        System.out.println("\f|XD||**| Jogo da Memória  |**||**|");
         System.out.println("|**||**| |**||**||**||**| |XD||**|");
         waitTurn();
-        System.out.println("\f|XD||**| Memory Card Game |=]||**|");
+        System.out.println("\f|XD||**| Jogo da Memória  |=]||**|");
         System.out.println("|=]||**| |**||**||**||**| |XD||**|");
         waitTurn();
-        System.out.println("\f|XD||**| Memory Card Game |=]||**|");
+        System.out.println("\f|XD||**| Jogo da Memória  |=]||**|");
         System.out.println("|=]||**| |=D||**||**||**| |XD||=D|");
         waitTurn();
-        System.out.println("\f|XD||**| Memory Card Game |=]||**|");
+        System.out.println("\f|XD||**| Jogo da Memória  |=]||**|");
         System.out.println("|=]||**| |=D||**||**||**| |XD||=D|");
         waitTurn();
-        System.out.println("\f|**||**| Memory Card Game |**||**|");
+        System.out.println("\f|**||**| Jogo da Memória  |**||**|");
         System.out.println("|**||**| |**||**||**||**| |**||**|");
         waitTurn();
         return;
