@@ -13,8 +13,8 @@ public class Card{
      * Create a new Card
      */
     public Card(int value){
-        this.value = value;
-        status = false;
+        this.value = value; //value comes from deck variable pos;
+        status = false; //status show or hide the card
     }
     
     /**
@@ -28,6 +28,7 @@ public class Card{
      * This method return the Card value.
      */
     public int getValue() { return value; }
+    public boolean getStatus(){ return status; }
     
     /**
      * This method change the Card status, showing it's value.
@@ -37,7 +38,7 @@ public class Card{
     /**
      * This method change the Card status, hiding it's value.
      */
-    public void showCard() { status = true; }
+    public void showCard() { status = true;  }
     
     /**
      * This method return the value or card status if hidden.
@@ -62,6 +63,10 @@ public class Card{
             case 12: output = "|=P|"; break;
             case 13: output = "|XD|"; break;
             case 14: output = "|XP|"; break;
+            case 15: output = "|=T|"; break;
+            case 16: output = "|=*|"; break;
+            case 17: output = "|:>|"; break;
+            case 18: output = "|:<|"; break;
             default: output = "|er|";
     }
         return output;

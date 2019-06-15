@@ -13,10 +13,10 @@ public class Deck{
      * This method instances a new deck of cards with a standard cardAmount.
      */
     public Deck(){
-        int cardAmount=4;
+        int cardAmount=6; //amount of columns in the matrix, also the amount of lines.
         deck = new Card[cardAmount][cardAmount];
-        pos = 0;
-        fill();
+        pos = 0; //pos used to give the initial value of the card class.
+        fill(); //fill the matrix with card objects
     }
     
     /**
@@ -28,7 +28,7 @@ public class Deck{
             for(int i=0;i<deck.length;i++){
                 deck[i][j] = new Card(pos);
                 pos++;
-                if(pos==8){ pos = 0; }
+                if(pos==18){ pos = 0; }
             }
         }
     }
@@ -50,7 +50,7 @@ public class Deck{
      * This method show the card to check the value toString and show to the user.
      */    
     public void showCard(int a, int b){
-        if(a>0||a<4 && b>0 || b<4) deck[a][b].showCard();
+        if(a>0||a<6 && b>0 || b<6) deck[a][b].showCard();
         return;
     }
     
@@ -68,14 +68,26 @@ public class Deck{
         }
     }
     
-    public void compareTrue(int a, int b, int c, int d){
+    public boolean verifyValue(int a, int b){
+        if(deck[a][b].getValue()==-1 || deck[a][b].getStatus()==true) return false;
+        else return true;
+    }
+    
+    private void compareTrue(int a, int b, int c, int d){
         deck[a][b].setValue(-1);
         deck[c][d].setValue(-1);
     }
     
+    /**
+     * This method hides both cards after denied their equity.
+     * @param a First card matrix line index.
+     * @param b First card matrix column index.
+     * @param c Second card matrix line index.
+     * @param d Second card matrix column index.
+     */
     public void compareFalse(int a, int b, int c, int d){
-        deck[a][b].hideCard();
-        deck[c][d].hideCard();
+        if(deck[a][b].getValue()!=-1) deck[a][b].hideCard();
+        if(deck[c][d].getValue()!=-1) deck[c][d].hideCard();
     }
     
     /**
@@ -101,6 +113,6 @@ public class Deck{
             }
             msg += "\n\n";
         }
-        return "\f   1    2    3    4 \n" + msg;
+        return "\f   1    2    3    4    5    6 \n" + msg;
     }
 }
