@@ -15,15 +15,7 @@ public class Deck{
         int cardAmount=6; //amount of columns in the matrix, also the amount of lines.
         deck = new Card[cardAmount][cardAmount];
         fill();
-        for(int i=0;i<deck.length;i++){
-            for(int j=0;j<deck[i].length;j++){
-                int i1 = (int) (Math.random()*deck.length);
-                int j1 = (int) (Math.random()*deck[i].length);
-                Card temp = deck[i][j];
-                deck[i][j] = deck[i1][j1];
-                deck[i1][j1] = temp;
-            }
-        }
+        shuffle();
     }
     
     /**
@@ -43,22 +35,16 @@ public class Deck{
     /**
      * This method shuffle the matrix to get a new randomized matrix.
      */
-    public Card[][] shuffle(Card[][] aDeck){
-        Random rn = new Random();
-        Card[][] bDeck = new Card[6][6];
-        for(int j=0;j<aDeck.length;j++){   
-            for(int i=0;i<aDeck.length;i++){
-                int r = rn.nextInt(5);
-                int s = rn.nextInt(5);
-                do{
-                    if(aDeck[r][s]!=null) {
-                        bDeck [i][j] = aDeck [r][s];
-                        aDeck[r][s] = null;
-                    }
-                }while(bDeck[i][j]==null);
+    public void shuffle(){
+        for(int i=0;i<deck.length;i++){
+            for(int j=0;j<deck[i].length;j++){
+                int i1 = (int) (Math.random()*deck.length);
+                int j1 = (int) (Math.random()*deck[i].length);
+                Card temp = deck[i][j];
+                deck[i][j] = deck[i1][j1];
+                deck[i1][j1] = temp;
             }
         }
-        return bDeck;
     }
     
     /**
