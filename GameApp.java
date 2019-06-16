@@ -63,8 +63,7 @@ public class GameApp{
                 }while(l1<1 || l1>6);
                 verify = deck1.verifyValue(c1-1,l1-1);
                 if (verify == false) {
-                    System.out.println("\n*Carta inválida, tente novamente*");
-                    Utilities.waitTurn(2000); 
+                    System.out.println("\n*Carta inválida, tente novamente*\n\n");
                 }
             }while(verify==false);
             
@@ -84,8 +83,7 @@ public class GameApp{
                 }while(l2<1 || l2>6);
                 verify = deck1.verifyValue(c2-1,l2-1);
                 if (verify == false) {
-                    System.out.println("\n*Carta inválida, tente novamente*");
-                    Utilities.waitTurn(2000); 
+                    System.out.println("\n*Carta inválida, tente novamente*\n\n");
                 }
             }while(verify==false);
             
