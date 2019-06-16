@@ -16,41 +16,37 @@ public class GameApp{
         int menuOption=0;
         boolean load = false;
         do{
-            System.out.println("\f|**||**| Jogo da Memória  |**||**|");
-            System.out.println("|**||**| |**||**||**||**| |**||**|");
-            System.out.println("\n            - Menu -\n");
-            System.out.println("        1 - Novo Jogo");
-            System.out.println("        2 - Carregar");
-            System.out.println("        3 - Como jogar");
-            System.out.println("        0 - Sair");
+            Utilities.window();
+            System.out.println("            - Menu -\n");
+            System.out.println("         1 - Novo Jogo");
+            System.out.println("         2 - Carregar Jogo");
+            System.out.println("         3 - Recorde atual");
+            System.out.println("         0 - Sair");
             menuOption = in.nextInt();
             
             switch(menuOption){
-                case 1: startGame(load);
-                case 2: { load = true;
-                    startGame(load);
-                }
-                case 3:
+                case 1: startGame(load); break;
+                case 2: load = true; startGame(load); break;
+                case 3: Highscore.menuHighscore(); break;
                 case 0: break;
+                default: System.out.println("Opção inválida");
             }
         }while(menuOption!=0);
     }
     
-    private static void startGame(boolean load) throws FileNotFoundException{
+    public static void startGame(boolean load) throws FileNotFoundException{
         Scanner in = new Scanner(System.in);
         Deck deck1 = new Deck();
         boolean bScore=false, save=false;
         int score=0;
         int round=1;
-        if(load == false){ ; }
-        else if(load == true){
+        if(load == true){
             //ler arquivos de carregamento
         }
         
-        for(int i=round;i<=100;i++){
-            
+        for(int i=round;i<=500;i++){
             System.out.println(deck1);
-            System.out.println("Jogada nº: " + i);
+            System.out.println("Rodada nº " + i + "\nRestam " + (36-(score*2)) +" cartas.");
             
             int c1, l1, c2, l2;
             boolean verify = true;
@@ -74,7 +70,7 @@ public class GameApp{
             
             deck1.showCard(c1-1,l1-1);
             System.out.println(deck1);
-            System.out.println("Jogada nº: " + i);
+            System.out.println("Rodada nº " + i + "\nRestam " + (36-(score*2)) +" cartas.");
             
             //Second card
             do{
@@ -95,7 +91,7 @@ public class GameApp{
             
             deck1.showCard(c2-1,l2-1);
             System.out.println(deck1);
-            System.out.println("Jogada nº: " + i);
+            System.out.println("Rodada nº " + i + "\nRestam " + (36-(score*2)) +" cartas.");
             
             Utilities.waitTurn(1500);
             bScore = deck1.compareCards(c1-1, l1-1, c2-1, l2-1); //boolean return of compare cards
@@ -104,9 +100,13 @@ public class GameApp{
             
             
             if(score == 18){
-                System.out.println("Parabéns, você ganhou com " + i + "jogadas.");
-                break;
+                System.out.println("Parabéns, você ganhou com " + i + " rodadas.");
+                Highscore.checkWinner(i);
+                System.out.println("\nDigite qualquer coisa para sair");
+                String exit = in.next();
+                return;
             }
+            
             
         }
         

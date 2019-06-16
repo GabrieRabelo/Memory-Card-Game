@@ -1,7 +1,12 @@
 #BlueJ class context
 comment0.target=Utilities
-comment1.params=ms
-comment1.target=void\ waitTurn(int)
-comment2.params=
-comment2.target=void\ startScreen()
-numComments=3
+comment1.params=
+comment1.target=void\ window()
+comment1.text=\r\n\ Menu\ game\ name,\ created\ a\ method\ because\ it\ repeats\ in\ some\ menu\ screen.\r\n
+comment2.params=ms
+comment2.target=void\ waitTurn(int)
+comment2.text=\r\n\ POO\ method\ to\ force\ the\ app\ to\ wait,\ important\ to\ see\ the\ cards\ turning.\r\n\ @param\ ms\ Time\ to\ wait\ in\ miliseconds.\r\n
+comment3.params=
+comment3.target=void\ startScreen()
+comment3.text=\r\n\ This\ method\ is\ the\ animation\ of\ the\ start\ Screen.\r\n
+numComments=4

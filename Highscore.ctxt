@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Highscore
+comment1.params=score
+comment1.target=void\ checkWinner(int)
+comment1.text=\r\n\ This\ method\ check\ if\ the\ player\ is\ the\ winner\ at\ the\ end\ of\ the\ game.\r\n
+comment2.params=
+comment2.target=int\ read()
+comment2.text=\r\n\ This\ method\ red\ the\ file\ to\ compare\ with\ the\ current\ winner.\r\n
+comment3.params=name\ score
+comment3.target=void\ write(java.lang.String,\ int)
+comment3.text=\r\n\ This\ method\ saves\ the\ new\ winner\ in\ the\ file.\r\n
+comment4.params=
+comment4.target=void\ menuHighscore()
+comment4.text=\r\n\ This\ method\ shows\ the\ Highest\ score\ file.\ Used\ in\ main\ menu.\r\n
+numComments=5
