@@ -7,13 +7,15 @@
  */
 import java.util.Scanner;
 public class Utilities{
-        public static void waitTurn(int ms){
+    
+    
+    public static void waitTurn(int ms){
         try { Thread.sleep(ms); }
         catch (InterruptedException e) { e.printStackTrace();}
         return;
     }
     
-        public static void startScreen(){
+    public static void startScreen(){
         Scanner in = new Scanner(System.in);
         System.out.println("\f|**||**| Jogo da Memória  |**||**|");
         System.out.println("|**||**| |**||**||**||**| |**||**|");

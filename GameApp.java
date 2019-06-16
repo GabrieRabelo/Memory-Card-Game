@@ -18,11 +18,11 @@ public class GameApp{
         do{
             System.out.println("\f|**||**| Jogo da Memória  |**||**|");
             System.out.println("|**||**| |**||**||**||**| |**||**|");
-            System.out.println("\n        - Menu -\n");
-            System.out.println("1 - Novo Jogo");
-            System.out.println("2 - Carregar");
-            System.out.println("3 - Como jogar");
-            System.out.println("0 - Sair");
+            System.out.println("\n            - Menu -\n");
+            System.out.println("        1 - Novo Jogo");
+            System.out.println("        2 - Carregar");
+            System.out.println("        3 - Como jogar");
+            System.out.println("        0 - Sair");
             menuOption = in.nextInt();
             
             switch(menuOption){
