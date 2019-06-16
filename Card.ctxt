@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Card
-comment0.text=\r\n\ This\ class\ is\ a\ part\ of\ SE\ Introduction\ class\ work.\r\n\r\n\ @author\ Gabriel\ Rabelo\r\n\ @version\ 09/jun/2019\r\n
+comment0.text=\r\n\ This\ class\ is\ the\ Card\ object.\r\n\r\n\ @author\ Gabriel\ Rabelo\r\n\ @version\ v1\r\n
 comment1.params=value
 comment1.target=Card(int)
 comment1.text=\r\n\ Create\ a\ new\ Card\r\n

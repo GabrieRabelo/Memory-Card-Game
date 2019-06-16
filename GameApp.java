@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class GameApp{
-    public static void main (String args[]){
+    public static void main (String args[]) throws FileNotFoundException{
         Utilities.startScreen();
         Scanner in = new Scanner(System.in);
         int menuOption=0;
@@ -36,7 +36,7 @@ public class GameApp{
         }while(menuOption!=0);
     }
     
-    private static void startGame(boolean load){
+    private static void startGame(boolean load) throws FileNotFoundException{
         Scanner in = new Scanner(System.in);
         Deck deck1 = new Deck();
         boolean bScore=false, save=false;

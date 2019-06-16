@@ -1,8 +1,8 @@
 /**
- * This class is a part of SE Introduction class work.
+ * This class is the Card object.
  *
  * @author Gabriel Rabelo
- * @version 09/jun/2019
+ * @version v1
  */
 
 public class Card{

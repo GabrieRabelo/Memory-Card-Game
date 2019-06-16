@@ -1,13 +1,12 @@
 /**
- * This class is a part of SE Introduction class work.
+ * This class is a deck matrix of cards, main matrix of the game.
  *
  * @author Gabriel Rabelo
- * @version 9/jul/2019
+ * @version v1
  */
 import java.util.Random;
 public class Deck{
     private Card[][] deck;
-    private int pos;
     
     /**
      * This method instances a new deck of cards with a standard cardAmount.
@@ -15,7 +14,6 @@ public class Deck{
     public Deck(){
         int cardAmount=6; //amount of columns in the matrix, also the amount of lines.
         deck = new Card[cardAmount][cardAmount];
-        pos = 0; //pos used to give the initial value of the card class.
         fill(); //fill the matrix with card objects
     }
     
@@ -27,8 +25,8 @@ public class Deck{
         for(int j =0;j<deck.length;j++){
             for(int i=0;i<deck.length;i++){
                 deck[i][j] = new Card(pos);
-                pos++;
-                if(pos==18){ pos = 0; }
+                pos++;//increase 1 in pos to initialize the next card with different value.
+                if(pos==18){ pos = 0; } //resets the pos when it's get at 18, to match the pair card and fill the matrix
             }
         }
     }
@@ -40,7 +38,7 @@ public class Deck{
         Random rn = new Random();
         for(int j=0;j<deck.length;j++){   
             for(int i=0;i<deck.length;i++){
-                int r = rn.nextInt(4);
+                int r = rn.nextInt(5);
                 
             }
         }
@@ -73,7 +71,7 @@ public class Deck{
         else return true;
     }
     
-    private void compareTrue(int a, int b, int c, int d){
+    public void compareTrue(int a, int b, int c, int d){
         deck[a][b].setValue(-1);
         deck[c][d].setValue(-1);
     }
@@ -93,7 +91,7 @@ public class Deck{
     /**
      * This method is used to test all cards value in the matrix;
      */
-    public void showAll(){
+    private void showAll(){
         for(int j=0;j<deck.length;j++){
             for(int i=0;i<deck.length;i++){
                 deck[i][j].showCard();
