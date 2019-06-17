@@ -37,7 +37,7 @@ public class GameApp{
     public static void startGame(boolean load) throws FileNotFoundException{
         Scanner in = new Scanner(System.in);
         Deck deck1 = new Deck();
-        boolean bScore=false, save=false;
+        boolean bScore=false;
         int score=0;
         int round=1;
         if(load == true){
@@ -54,11 +54,17 @@ public class GameApp{
             //First card
             do{
                 do{
-                    System.out.println("\nDigite o número da coluna.");
+                    System.out.println("\nDigite o número da coluna. (1 a 6)");
+                    System.out.println("9 - Pausa");
                     c1 = in.nextInt();
+                    if (c1 == 9) {
+                        boolean exit = pause();
+                        if (exit == true) return;
+                    }
+                        
                 }while(c1<1 || c1>6);
                  do{
-                    System.out.println("\nDigite o número da linha.");
+                    System.out.println("\nDigite o número da linha. (1 a 6)");
                     l1 = in.nextInt();
                 }while(l1<1 || l1>6);
                 verify = deck1.verifyValue(c1-1,l1-1);
@@ -74,11 +80,11 @@ public class GameApp{
             //Second card
             do{
                 do{
-                    System.out.println("\nDigite o número da coluna.");
+                    System.out.println("\nDigite o número da coluna. (1 a 6)");
                     c2 = in.nextInt();
                 }while(c2<1 || c2>6);
                 do{
-                    System.out.println("\nDigite o número da linha.");
+                    System.out.println("\nDigite o número da linha. (1 a 6)");
                     l2 = in.nextInt();
                 }while(l2<1 || l2>6);
                 verify = deck1.verifyValue(c2-1,l2-1);
@@ -97,7 +103,7 @@ public class GameApp{
             bScore = false;
             
             
-            if(score == 18){
+            if(score == 17){
                 System.out.println("Parabéns, você ganhou com " + i + " rodadas.");
                 Highscore.checkWinner(i);
                 System.out.println("\nDigite qualquer coisa para sair");
@@ -108,5 +114,23 @@ public class GameApp{
             
         }
         
+    }
+    
+    public static boolean pause(){
+        Scanner in = new Scanner(System.in);
+        int option = 0, option1 = 0;
+        do{
+            System.out.println("\n1 - Salvar\n2 - Sair\n3 - Voltar");
+            option = in.nextInt();
+            //if(option == 1) ;//metodo salvar
+            if(option == 2) {
+                do{
+                    System.out.println("Deseja realmente sair?\n1 - Sim\n2 - Voltar");
+                    option1 = in.nextInt();
+                    if (option1 == 1) return true;
+                }while(option1<1 || option>2);
+            }
+        }while(option<1 || option>3);
+        return false;
     }
 }

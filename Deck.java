@@ -56,7 +56,7 @@ public class Deck{
     }
     
     /**
-     * This method compares 2 cards value and set it's value to -1 if equals.
+     * This method compares 2 cards value and set its value to -1 if equals.
      */
     public boolean compareCards(int a, int b, int c, int d){
         if(deck[a][b].getValue()==deck[c][d].getValue()){
@@ -69,10 +69,23 @@ public class Deck{
         }
     }
     
+    /**
+     * This method verify if the value is -1 and change its status to print blank position.
+     * @param a card matrix column index
+     * @param b card matrix line index
+     */
     public boolean verifyValue(int a, int b){
         if(deck[a][b].getValue()==-1 || deck[a][b].getStatus()==true) return false;
         else return true;
     }
+    
+    /**
+     * This method set the value of both cards to -1 hiding its printing.
+     * @param a First card matrix column index.
+     * @param b First card matrix line index.
+     * @param c Second card matrix column index.
+     * @param d Second card matrix line index.
+     */
     
     public void compareTrue(int a, int b, int c, int d){
         deck[a][b].setValue(-1);
@@ -81,10 +94,10 @@ public class Deck{
     
     /**
      * This method hides both cards after denied their equity.
-     * @param a First card matrix line index.
-     * @param b First card matrix column index.
-     * @param c Second card matrix line index.
-     * @param d Second card matrix column index.
+     * @param a First card matrix column index.
+     * @param b First card matrix line index.
+     * @param c Second card matrix column index.
+     * @param d Second card matrix line index.
      */
     public void compareFalse(int a, int b, int c, int d){
         if(deck[a][b].getValue()!=-1) deck[a][b].hideCard();
@@ -94,7 +107,7 @@ public class Deck{
     /**
      * This method is used to test all cards value in the matrix;
      */
-    public void showAll(){
+    private void showAll(){
         for(int j=0;j<deck.length;j++){
             for(int i=0;i<deck.length;i++){
                 deck[i][j].showCard();
