@@ -11,45 +11,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 public class LoadNSave{
-    public class FileManager{
-    /**
-     * Método salva o jogo em [Slot.(slot)].txt
-     * Parâmetros:
-     * ArraList<Piece> chessman1 (Salva todo o ArrayList com as peças do time 1)
-     * ArraList<Piece> chessman2 (Salva todo o ArrayList com as peças do time 2)
-     * String fs (Salva o modo de jogo)
-     * boolean turn (Salva o turno)
-     * String file (Procura o Slot a salvar) 
-     * retorna true se for o jogo foi salvo em [Slot.(slot)].txt
-     */
-    public static boolean save(Deck deck1, int score, int round)throws FileNotFoundException {
-        PrintWriter dataSave = new PrintWriter(file);
+    public static boolean save(int score, int round)throws FileNotFoundException {
+        PrintWriter dataSave = new PrintWriter("save.txt");
         dataSave.println(score);
         dataSave.println(round);
-    
         
-        for(int i = 0; i < chessman1.deck.length; i++){
-            if(arrL) dataSaveChessman.println(chessman1.get(i).toSave());
-                else dataSaveChessman.println(chessman2.get(i).toSave());
-            if(i == chessman1.size()-1){
-                if(arrL != false){i = -1; arrL = false;}
-                  else i++;
-            }
-        }
-        dataSaveChessman.close();
+        
+        dataSave.close();
+        System.out.println("Jogo salvo com sucesso");
         return true;
     }
    
-    /**
-     * Método recorda o jogo em [Slot.(slot)].txt
-     * Parâmetros:
-     * ArraList<Piece> chessman1 (Recorda todo o ArrayList com as peças do time 1)
-     * ArraList<Piece> chessman2 (Recorda todo o ArrayList com as peças do time 2)
-     * String file (Procura o Slot a recordar) 
-     * retorna String charAt(0) == 'M' || 'S' (Modo de jogo)
-     * retorna String charAt(1) == 'T' || 'F' (Turno respectivo 'T' = Player 1 && 'F' = player 2)
-     */
-    public static String load(Deck deck1, int round, int score)throws FileNotFoundException {
+    /*public static String load(Deck deck1, int round, int score)throws FileNotFoundException {
         File origenLoadChessman = new File(file);
         Scanner dataLoadChessman = new Scanner(origenLoadChessman);
         boolean arrL = true;
@@ -95,5 +68,5 @@ public class LoadNSave{
         }
         dataLoadChessman.close();
         return fxLine;
-    }
+    }*/
 }

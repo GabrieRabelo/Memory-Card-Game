@@ -44,7 +44,8 @@ public class GameApp{
             //ler arquivos de carregamento
         }
         
-        for(int i=round;i<=500;i++){
+        for(int i=0;i<=500;i++){
+            round = i;
             System.out.println(deck1);
             System.out.println("Rodada nº " + i + "\nRestam " + (36-(score*2)) +" cartas.");
             
@@ -58,7 +59,7 @@ public class GameApp{
                     System.out.println("9 - Pausa");
                     c1 = in.nextInt();
                     if (c1 == 9) {
-                        boolean exit = pause();
+                        boolean exit = pause(score, round);
                         if (exit == true) return;
                     }
                         
@@ -116,13 +117,13 @@ public class GameApp{
         
     }
     
-    public static boolean pause(){
+    public static boolean pause(int score, int round) throws FileNotFoundException{
         Scanner in = new Scanner(System.in);
         int option = 0, option1 = 0;
         do{
             System.out.println("\n1 - Salvar\n2 - Sair\n3 - Voltar");
             option = in.nextInt();
-            //if(option == 1) ;//metodo salvar
+            LoadNSave.save(score, round);
             if(option == 2) {
                 do{
                     System.out.println("Deseja realmente sair?\n1 - Sim\n2 - Voltar");
