@@ -2,8 +2,8 @@
 comment0.target=GameApp
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=load
-comment2.target=void\ startGame(boolean)
-comment3.params=score\ round
-comment3.target=boolean\ pause(int,\ int)
+comment2.params=
+comment2.target=void\ startGame()
+comment3.params=
+comment3.target=boolean\ pause()
 numComments=4
